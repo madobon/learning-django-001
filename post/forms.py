@@ -10,7 +10,7 @@ class PostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
 
-        # self.fields['keyword'].required = True
+        self.fields['keyword'].required = True
         self.fields['keyword'].widget.attrs['class'] = 'form-control'
     def clean_keyword(self):
         keyword = self.cleaned_data['keyword']

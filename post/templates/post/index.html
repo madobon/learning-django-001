@@ -33,7 +33,6 @@
                 {% if form.keyword.errors %}
                 <div class="form-group has-error has-feedback">
                     <div class="col-xs-8 col-md-8 col-sm-8 col-lg-8 col-xs-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-offset-1">
-                        {# <div><label class="control-label" for="id_keyword">{{form.keyword.errors}}</label></div> #}
                         {{ form.keyword }}
                         <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                     </div>
@@ -62,14 +61,13 @@
                                 <h3 class="panel-title">{{entry.created_at}}</h3>
                             </div>
                             <div class="panel-body">
-                                Speaking of <span > ( {{entry.get_previous_keyword}} ) </span >, it is <span> ( {{entry.keyword}} ) </span>!
+                                Speaking of <span>{{entry.get_previous_keyword}}</span >, it is <span>{{entry.keyword}}</span>!
                             </div>
                         </div>
                     {% endfor %}
                 {% else %}
                     <p class="text-center">Banana</p>
                 {% endif %}
-
                 {% include "post/paginator.html" %}
                 <footer>
                 <div class="text-center"><a href="//madobon.com">madobon.com</a></div>
